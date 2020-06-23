@@ -10,6 +10,7 @@
 
 <span th:each="teams:${teamlist}">
   <a th:href="@{'/i/output?id=' + ${teams.id}}"  th:text="${teams.teamName}"> </a><br>
+  <br>
 </span>
 
 </body>
