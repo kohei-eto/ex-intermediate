@@ -38,7 +38,7 @@ public class HotelsRepository {
 		 
 		 
 		 String sql =
-				 "select * from hotels";
+				 "select * from hotels order by price";
 		 
 
 	 	 List<Hotels> hotelslist
@@ -54,7 +54,7 @@ public class HotelsRepository {
 		
 		 
 		 String sql =
-				 "select * from hotels where price <= :price";
+				 "select * from hotels where price <= :price order by price";
 		 
 		 
 		 SqlParameterSource param

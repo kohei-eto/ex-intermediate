@@ -35,10 +35,10 @@ public class HotelsController {
 			@Validated HotelsForm hotelsForm,
 			BindingResult result,Model model) {
 		
-           if(result.hasErrors()) {
-			
-			return "hotels";
-			}
+		
+		  if(result.hasErrors()) { 
+			  return "hotels"; }
+		 
 		
 		
 		 if (hotelsForm.getPrice().equals("")) {
@@ -61,7 +61,8 @@ public class HotelsController {
 		  model.addAttribute("hotelslist", hotelslist);
 		 
 		
-		return "hotels";}
+		return "hotels";
+		}
 		
 	}
 	

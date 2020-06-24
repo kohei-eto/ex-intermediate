@@ -6,11 +6,12 @@
 </head>
 <body>
  <h1>ホテル検索</h1>
+ 
  <form th:action="@{/j/output}" method="post" th:object="${hotelsForm}">
  <div th:if="${#fields.hasErrors('price')}"
       th:errors="*{price}"
-      style="color:red">エラー!</div>
- <input type="text" name="price" th:field="*{price}">円以下<br>
+      style="color:red" >エラー!</div>
+ <input type="text" name="price" th:field="*{price}" >円以下<br>
  <br>
  <button>送信</button>
 </form>
