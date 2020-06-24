@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <h1>ホテル検索</h1>
+ <form th:action="@{/j/output}" method="post" th:object="${hotelsForm}">
+ <div th:if="${#fields.hasErrors('price')}"
+      th:errors="*{price}"
+      style="color:red">エラー!</div>
+ <input type="text" name="price" th:field="*{price}">円以下<br>
+ <br>
+ <button>送信</button>
+</form>
+ 
+ <table   border="1" th:each="hotels : ${hotelslist}" >
+  <tr>
+   <td>ホテル名</td>
+   <td th:text="${hotels.hotelName}"></td>
+  </tr>
+  <br>
+  <tr>
+   <td>最寄駅</td>
+   <td th:text="${hotels.nearestStation}"></td>
+  </tr>
+  <br>
+  <tr>
+   <td>価格</td>
+   <td th:text="${hotels.price}"></td>
+  </tr>
+  <br>
+ </table>
+ 
+
+
+</body>
+</html>
